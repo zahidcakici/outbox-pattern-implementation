@@ -1,0 +1,8 @@
+# Docker volumes
+.data
+
+# Dependency directories
+node_modules/
+
+# env file
+.env
