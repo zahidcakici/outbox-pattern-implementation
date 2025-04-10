@@ -20,33 +20,36 @@ This project implements the **Outbox Pattern**, a reliable way to ensure eventua
 
 ## File Structure
 
-```
+``` markdown
 /outbox-implementation
-├── invoice-service/
-│   ├── kafka/
-│   │   ├── consumer.js
-│   ├── models/
-│   │   ├── invoice.js
-│   ├── index.js
-│
-├─- order-service/
-│   ├── handlers/
-│   │   ├── order_handler.go
-│   ├── models/
-│   │   ├── order.go
-│   ├── main.go
-│   
-├── outbox-processor/
-│   ├── handlers/
-│   │   ├── outbox_handler.go
-│   ├── models/
-│   │   ├── order.go
-│   ├── main.go
+├── src/
+│   ├── invoice-service/
+│   │   ├── kafka/
+│   │   │   ├── consumer.js
+│   │   ├── models/
+│   │   │   ├── invoice.js
+│   │   ├── index.js
+│   │
+│   ├─- order-service/
+│   │   ├── handlers/
+│   │   │   ├── order_handler.go
+│   │   ├── models/
+│   │   │   ├── order.go
+│   │   ├── main.go
+│   │   
+│   ├── outbox-processor/
+│   │   ├── handlers/
+│   │   │   ├── outbox_handler.go
+│   │   ├── models/
+│   │   │   ├── order.go
+│   │   ├── main.go
 │
 ├── README.md
 ├── docker-compose.yml
 ```
+
 ## Technologies Used
+
 - **Node.js**: For the invoice service and Kafka consumer.
 - **Go**: For the order service and outbox processor.
 - **Kafka**: For message brokering.
@@ -57,11 +60,14 @@ This project implements the **Outbox Pattern**, a reliable way to ensure eventua
 ## Getting Started
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/zahidcakici/outbox-pattern-implementation.git
    cd outbox-implementation
    ```
+
 2. Install dependencies:
+
    ```bash
    # For Node.js services
    cd invoice-service
@@ -74,11 +80,15 @@ This project implements the **Outbox Pattern**, a reliable way to ensure eventua
    cd outbox-processor
    go mod tidy
    ```
+
 3. Set up the environment:
-   ```
+
+   ``` bash
    docker-compose up -d
    ```
+
 4. Run the services:
+
    ```bash
    # For Node.js services
    cd invoice-service
@@ -89,6 +99,7 @@ This project implements the **Outbox Pattern**, a reliable way to ensure eventua
    cd outbox-processor
    go run main.go
    ```
+
 5. Test the implementation:
    - Use Postman or curl to send requests to the order service.
    - Check the outbox table in the database to see if messages are being processed.
